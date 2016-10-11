@@ -4,11 +4,11 @@ import { Pages } from './pages.component';
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => System.import('./login/login.module')
+    loadChildren: () => System.import('./+auth/login/login.module')
   },
   // {
   //   path: 'register',
-  //   loadChildren: () => System.import('./register/register.module')
+  //   loadChildren: () => System.import('./+auth/register/register.module')
   // },
   {
     path: 'pages',
