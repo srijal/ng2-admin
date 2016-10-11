@@ -5,6 +5,31 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
+/** Google Map module **/
+import { AgmCoreModule }                      from "angular2-google-maps/core/core-module";
+
+/** Firebase module **/
+import {
+    AngularFireModule,
+    AuthMethods,
+    AuthProviders
+}                                           from 'angularfire2';
+
+/** firebase the config **/
+export const firebaseConfig = {
+    apiKey: "AIzaSyBlB-rAiulzhN59_VqCUYthK37-cSPcrgc",
+    authDomain: "brick-admin.firebaseapp.com",
+    databaseURL: "https://brick-admin.firebaseio.com",
+    storageBucket: "brick-admin.appspot.com",
+    messagingSenderId: "1067107688359"
+};
+
+export const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password,
+}
+
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -46,7 +71,8 @@ type StoreType = {
     ReactiveFormsModule,
     NgaModule.forRoot(),
     PagesModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
