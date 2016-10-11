@@ -24,6 +24,7 @@ import 'jquery';
 import 'bootstrap-loader';
 import 'font-awesome-sass-loader';
 import 'lodash';
+import 'firebase';
 
 if ('production' === ENV) {
   // Production
